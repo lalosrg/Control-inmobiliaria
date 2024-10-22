@@ -40,7 +40,7 @@ function obtenerParametrosURL() {
   const params = new URLSearchParams(window.location.search);
   return {
       clienteId: params.get('clienteId'),
-      totalAPagar: params.get('totalAPagar')
+      totalAPagar: parseFloat(params.get('totalAPagar')) || 0 // Convertir a número
   };
 }
 
@@ -53,6 +53,29 @@ document.addEventListener('DOMContentLoaded', function() {
       calcularTotal(); // Llamar a la función calcularTotal después de cargar el monto
   }
 });
+
+// Función para realizar el pago con punitorios
+function realizarPago(id) {
+  // Obtener los valores de los inputs y asegurarse de que son números válidos
+  const diasAtraso = parseFloat(document.getElementById('diasAtraso').value) || 0;
+  const punitoriosPorcentaje = parseFloat(document.getElementById('punitoriosPorcentaje').value) || 0;
+
+  // Obtener el total a pagar de los parámetros
+  const { totalAPagar } = obtenerParametrosURL();
+
+  // Calcular los punitorios
+  const punitorios = totalAPagar * (punitoriosPorcentaje / 100) * diasAtraso;
+
+  // Calcular el total final con punitorios
+  const totalFinal = totalAPagar + punitorios;
+
+  // Actualizar el campo de "Monto a pagar" con el total final que incluye los punitorios
+  document.getElementById('montoPagar').value = totalFinal.toFixed(2);
+
+  // Redirigir a la calculadora con el total ajustado
+  const url = `calculadora.html?clienteId=${id}&totalAPagar=${totalFinal.toFixed(2)}`;
+  window.open(url, '_blank'); // Abre en una nueva pestaña
+}
 
 function actualizarPagoCliente() {
   const urlParams = new URLSearchParams(window.location.search);

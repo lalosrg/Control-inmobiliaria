@@ -27,6 +27,8 @@
                 <input type="number" id="expensas" placeholder="Expensas 🏢" required>
                 <input type="number" id="impuesto" placeholder="Impuesto o servicio 💵" required> <!-- Nuevo campo para impuesto -->
                 <!-- Campo de selección para Administrador dentro del label -->
+                <input type="number" id="diasAtraso" placeholder="Días de Atraso 📅"  required>
+                <input type="number" id="punitoriosPorcentaje" placeholder="Punitorios (%) 💼" required>
                 <label for="administrador">👤 Administrador:
                     <select id="administrador">
                         <option value="Leandro">Leandro</option>
@@ -42,6 +44,7 @@
             <table id="clientTable">
                 <thead>
                     <tr>
+                      
                         <th>ID 🔢</th>
                         <th>Mes 📆</th>
                         <th>Nombre 🧑‍🤝‍🧑</th>
@@ -53,6 +56,9 @@
                         <th>Monto 💰</th>
                         <th>Expensas 🏢</th>
                         <th>Impuesto o Servicio 💵</th>
+                        <th>Días de Atraso</th>
+                        <th>Punitorios (%)</th>
+                        <th>Total Punitorios</th>
                         <th>Total a Pagar 💸</th>
                         <th>Pago 💳</th>
                         <th>Administrador 👤</th> <!-- Nueva columna para Administrador -->
