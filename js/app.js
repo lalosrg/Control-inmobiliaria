@@ -131,8 +131,8 @@ function actualizarPago(id, pago) {
 // Agregar botones de resumen en el HTML (dentro del body)
 const resumenContainer = document.createElement('div');
 resumenContainer.innerHTML = `
-    <button id="resumenLalo">Resumen Lalo</button>
-    <button id="resumenFede">Resumen Fede</button>
+    <button id="resumenLeandro">Resumen Leandro</button>
+    <button id="resumenFederico">Resumen Federico</button>
 `;
 document.body.appendChild(resumenContainer);
 
@@ -151,8 +151,8 @@ function calcularResumen(administrador) {
 }
 
 // Event listeners para los botones de resumen
-document.getElementById('resumenLalo').addEventListener('click', () => calcularResumen("Lalo"));
-document.getElementById('resumenFede').addEventListener('click', () => calcularResumen("Fede"));
+document.getElementById('resumenLeandro').addEventListener('click', () => calcularResumen("Leandro"));
+document.getElementById('resumenFederico').addEventListener('click', () => calcularResumen("Federico"));
 
 
 // Función para editar cliente

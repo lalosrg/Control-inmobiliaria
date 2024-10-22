@@ -145,7 +145,7 @@ tr:hover {
 }
 
 
-    #resumenLalo, #resumenFede {
+    #resumenLeandro, #resumenFederico {
         background-color: black; /* Color de fondo negro */
         color: white; /* Color de letra blanca */
         border: none; /* Sin borde */
@@ -163,7 +163,7 @@ tr:hover {
     }
 
     /* Efecto al pasar el mouse sobre el botón */
-    #resumenLalo:hover, #resumenFede:hover {
+    #resumenLeandro:hover, #resumenFederico:hover {
         background-color: darkgray; /* Cambiar el color de fondo al pasar el mouse */
     }
 
