@@ -15,30 +15,53 @@
         <div id="mesActual"></div>
 
         <div class="form-container">
-            <form id="clienteForm">
-                <input type="hidden" id="clienteId"> <!-- Campo oculto para el ID -->
-                <input type="text" id="nombre" placeholder="Nombre 🧑‍🤝‍🧑" required>
-                <input type="text" id="apellido" placeholder="Apellido 👤" required>
-                <input type="text" id="direccion" placeholder="Dirección 🏡" required>
-                <input type="date" id="fechaContrato" required> <!-- Campo de fecha de contrato -->
-                <input type="number" id="tiempoContrato" placeholder="Tiempo de Contrato (Años) ⏳" required>
-                <input type="number" id="ajustesContrato" placeholder="Ajustes cada cuántos meses 📅" required>
-                <input type="number" id="monto" placeholder="Monto 💰" required>
-                <input type="number" id="expensas" placeholder="Expensas 🏢" required>
-                <input type="number" id="impuesto" placeholder="Impuesto o servicio 💵" required> <!-- Nuevo campo para impuesto -->
-                <!-- Campo de selección para Administrador dentro del label -->
-                <input type="number" id="diasAtraso" placeholder="Días de Atraso 📅"  required>
-                <input type="number" id="punitoriosPorcentaje" placeholder="Punitorios (%) 💼" required>
-                <label for="administrador">👤 Administrador:
-                    <select id="administrador">
-                        <option value="Leandro">Leandro</option>
-                        <option value="Federico">Federico</option>
-                    </select>
-                </label>
+    <form id="clienteForm">
+        <input type="hidden" id="clienteId"> <!-- Campo oculto para el ID -->
 
-                <button type="submit">Agregar Cliente ➕</button>
-            </form>
-        </div>
+        <label for="nombre">Nombre 🧑‍🤝‍🧑</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
+
+        <label for="apellido">Apellido 👤</label>
+        <input type="text" id="apellido" placeholder="Ingrese su apellido" required>
+
+        <label for="direccion">Dirección 🏡</label>
+        <input type="text" id="direccion" placeholder="Ingrese su dirección" required>
+
+        <label for="fechaContrato">Fecha de Contrato 📅</label>
+        <input type="date" id="fechaContrato" required>
+
+        <label for="tiempoContrato">Tiempo de Contrato (Años) ⏳</label>
+        <input type="number" id="tiempoContrato" placeholder="Ingrese los años del contrato" required>
+
+        <label for="ajustesContrato">Ajustes cada cuántos meses 📅</label>
+        <input type="number" id="ajustesContrato" placeholder="Ingrese los ajustes cada meses" required>
+
+        <label for="monto">Monto 💰</label>
+        <input type="number" id="monto" placeholder="Ingrese el monto" required>
+
+        <label for="expensas">Expensas 🏢</label>
+        <input type="number" id="expensas" placeholder="Ingrese las expensas" required>
+
+        <label for="impuesto">Impuesto o Servicio 💵</label>
+        <input type="number" id="impuesto" placeholder="Ingrese el impuesto o servicio" required>
+
+        <label for="diasAtraso">Días de Atraso 📅</label>
+        <input type="number" id="diasAtraso" placeholder="Ingrese días de atraso" required>
+
+        <label for="punitoriosPorcentaje">Punitorios (%) 💼</label>
+        <input type="number" id="punitoriosPorcentaje" placeholder="Ingrese punitorios (%)" required>
+
+        <label for="administrador">👤 Administrador:</label>
+        <select id="administrador">
+            <option value="Leandro">Leandro</option>
+            <option value="Federico">Federico</option>
+        </select>
+
+        <button type="submit">Agregar Cliente ➕</button>
+    </form>
+</div>
+
+        
 
         <div class="table-container">
             <table id="clientTable">
