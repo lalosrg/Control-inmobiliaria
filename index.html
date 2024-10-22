@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartera de Clientes 📋</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Puedes agregar estilos personalizados aquí si es necesario */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cartera de Clientes 📋</h1>
+        <div id="mesActual"></div>
+
+        <div class="form-container">
+            <form id="clienteForm">
+                <input type="hidden" id="clienteId"> <!-- Campo oculto para el ID -->
+                <input type="text" id="nombre" placeholder="Nombre 🧑‍🤝‍🧑" required>
+                <input type="text" id="apellido" placeholder="Apellido 👤" required>
+                <input type="text" id="direccion" placeholder="Dirección 🏡" required>
+                <input type="date" id="fechaContrato" required> <!-- Campo de fecha de contrato -->
+                <input type="number" id="tiempoContrato" placeholder="Tiempo de Contrato (Años) ⏳" required>
+                <input type="number" id="ajustesContrato" placeholder="Ajustes cada cuántos meses 📅" required>
+                <input type="number" id="monto" placeholder="Monto 💰" required>
+                <input type="number" id="expensas" placeholder="Expensas 🏢" required>
+                <input type="number" id="impuesto" placeholder="Impuesto o servicio 💵" required> <!-- Nuevo campo para impuesto -->
+                <!-- Campo de selección para Administrador dentro del label -->
+                <label for="administrador">👤 Administrador:
+                    <select id="administrador">
+                        <option value="Lalo">Leandro</option>
+                        <option value="Fede">Federico</option>
+                    </select>
+                </label>
+
+                <button type="submit">Agregar Cliente ➕</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table id="clientTable">
+                <thead>
+                    <tr>
+                        <th>ID 🔢</th>
+                        <th>Mes 📆</th>
+                        <th>Nombre 🧑‍🤝‍🧑</th>
+                        <th>Apellido 👤</th>
+                        <th>Dirección 🏡</th>
+                        <th>Fecha del Contrato 📅</th>
+                        <th>Tiempo de Contrato (Años) ⏳</th>
+                        <th>Ajustes cada (Meses) 📆</th>
+                        <th>Monto 💰</th>
+                        <th>Expensas 🏢</th>
+                        <th>Impuesto o Servicio 💵</th>
+                        <th>Total a Pagar 💸</th>
+                        <th>Pago 💳</th>
+                        <th>Administrador 👤</th> <!-- Nueva columna para Administrador -->
+                        <th>Acciones ⚙️</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenará la tabla dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+      
+    
+    <script src="js/app.js"></script> <!-- Enlace al archivo JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/app.js"></script> <!-- Enlace al archivo JavaScript -->
+
+</body>
+</html>

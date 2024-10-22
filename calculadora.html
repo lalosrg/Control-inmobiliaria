@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pagos 💵</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Pagos 💸</h1>
+
+        <label for="montoPagar">💰 Monto a Pagar:</label>
+        <input type="text" id="montoPagar" class="input-field" placeholder="Ingrese el monto...">
+
+        <h2>📜 Billetes</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Denominación 💵</th>
+                    <th>Cantidad 📊</th>
+                    <th>Total 💰</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$100</td>
+                    <td><input type="number" id="billetes100" value="0" oninput="calcularTotal()"></td>
+                    <td id="total100">0</td>
+                </tr>
+                <tr>
+                    <td>$200</td>
+                    <td><input type="number" id="billetes200" value="0" oninput="calcularTotal()"></td>
+                    <td id="total200">0</td>
+                </tr>
+                <tr>
+                    <td>$500</td>
+                    <td><input type="number" id="billetes500" value="0" oninput="calcularTotal()"></td>
+                    <td id="total500">0</td>
+                </tr>
+                <tr>
+                    <td>$1000</td>
+                    <td><input type="number" id="billetes1000" value="0" oninput="calcularTotal()"></td>
+                    <td id="total1000">0</td>
+                </tr>
+                <tr>
+                    <td>$2000</td>
+                    <td><input type="number" id="billetes2000" value="0" oninput="calcularTotal()"></td>
+                    <td id="total2000">0</td>
+                </tr>
+                <tr>
+                    <td>$10000</td>
+                    <td><input type="number" id="billetes10000" value="0" oninput="calcularTotal()"></td>
+                    <td id="total10000">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="results">
+            <h3>💵 Monto Total de Billetes: <span id="montoTotal">0</span></h3>
+            <h3>🧾 Vuelto: <span id="vuelto">0</span></h3>
+            <h3>💳 Monto Restante: <span id="montoRestante">0</span></h3>
+        </div>
+        <button id="btnPagado" onclick="actualizarPagoCliente()">Pagado</button> <!-- Botón para marcar como pagado -->
+    </div>
+
+   
+
+    <script src="js/main.js"></script>
+</body>
+</html>

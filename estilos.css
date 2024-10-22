@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f3f4f7, #e2e5ec);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 1.1em;
+  display: block;
+  margin: 10px 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1em;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+td input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.results h3 {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.results h3 span {
+  color: #28a745;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%;
+  }
+}
+
+
+#btnPagado {
+  position: fixed; /* Fijar el botón en la posición deseada */
+  bottom: 20px; /* A 20px del fondo */
+  right: 20px; /* A 20px de la derecha */
+  background-color: black; /* Color de fondo negro */
+  color: white; /* Color de letra blanca */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+#btnPagado:hover {
+  background-color: darkgray; /* Cambiar el color de fondo al pasar el mouse */
+}
