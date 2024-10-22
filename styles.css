@@ -81,7 +81,7 @@ th, td {
 }
 
 th {
-  background-color: #1554b3;
+  background-color: #3c84f1;
   color: white;
 }
 
@@ -158,8 +158,12 @@ tr:hover {
         transition: background-color 0.3s; /* Transición suave para el color de fondo */
         align-items: center;
         justify-content: center;
-        width: 50%;
-        margin-left: 25%;
+        width: 40%;
+        display: block;
+        margin: auto;
+        padding: 8px;
+        margin-top: 25px;
+        
     }
 
     /* Efecto al pasar el mouse sobre el botón */
