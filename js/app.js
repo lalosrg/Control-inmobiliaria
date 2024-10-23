@@ -270,36 +270,65 @@ function descargarTicket(clienteId) {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
+        // Configurar la fuente y el tamaño para el título (más pequeño y no centrado)
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+
+        // Título en negrita, no centrado
+        doc.text("RECIBO\nALQUILER", 10, 20);
+
         // Saludo de bienvenida
-        doc.setFontSize(12);
-        doc.text(`Recibo de pago de alquiler:`, 10, 10); 
-        doc.text(`Estimado/a ${cliente.nombre} ${cliente.apellido},`, 10, 20);
-        doc.text(`¡Gracias por su preferencia!`, 10, 30);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        doc.text(`LEANDRO SORGETTI PROPIEDADES`, 10, 40);
+        doc.text(`Estimado/a ${cliente.nombre} ${cliente.apellido},`, 10, 50);
         
-        // Separación
-        doc.text(`----------------------------------------`, 10, 40);
-        
-        // Información del pago
-        doc.text(`Nombre Completo: ${cliente.nombre} ${cliente.apellido}`, 10, 50);
-        doc.text(`Dirección: ${cliente.direccion}`, 10, 60);
-        doc.text(`Fecha de Pago: ${new Date().toLocaleDateString('es-ES')}`, 10, 70);
-        
-        // Separación
-        doc.text(`----------------------------------------`, 10, 80);
-        doc.text(`Detalles del Pago:`, 10, 90);
-        doc.text(`Monto: $${cliente.monto.toFixed(2)}`, 10, 100);
-        doc.text(`Expensas: $${cliente.expensas.toFixed(2)}`, 10, 110);
-        doc.text(`Impuesto: $${cliente.impuesto.toFixed(2)}`, 10, 120);
-        doc.text(`Total a Pagar: $${cliente.totalAPagar.toFixed(2)}`, 10, 130);
-        doc.text(`Pago: ${cliente.pago}`, 10, 140);
-        doc.text(`Administrador: ${cliente.administrador}`, 10, 150);
-        
-        // Separación
-        doc.text(`----------------------------------------`, 10, 160);
-        
+        // Línea divisoria
+        doc.text(`-----------------------------------------------------------`, 10, 60);
+
+        // Información del cliente
+        doc.text(`Nombre Completo: ${cliente.nombre} ${cliente.apellido}`, 10, 70);
+        doc.text(`Dirección: ${cliente.direccion}`, 10, 80);
+        doc.text(`Fecha de Pago: ${new Date().toLocaleDateString('es-ES')}`, 10, 90);
+
+        // Línea divisoria
+        doc.text(`-----------------------------------------------------------`, 10, 100);
+
+        // Detalles del pago
+        doc.text(`Detalles del Pago:`, 10, 110);
+        doc.text(`Monto: $${cliente.monto.toFixed(2)}`, 10, 120);
+        doc.text(`Expensas: $${cliente.expensas.toFixed(2)}`, 10, 130);
+        doc.text(`Impuesto: $${cliente.impuesto.toFixed(2)}`, 10, 140);
+        doc.text(`Total a Pagar (sin punitorios): $${cliente.totalAPagar.toFixed(2)}`, 10, 150);
+
+        // Línea divisoria
+        doc.text(`-----------------------------------------------------------`, 10, 160);
+
+        // Información de punitorios en caso de atraso
+        if (cliente.diasAtraso > 0) {
+            const punitorios = (cliente.monto * (cliente.punitoriosPorcentaje / 100) * cliente.diasAtraso).toFixed(2);
+            const totalConPunitorios = (cliente.totalAPagar + parseFloat(punitorios)).toFixed(2);
+
+            doc.text(`Días de Atraso: ${cliente.diasAtraso}`, 10, 170);
+            doc.text(`Punitorios (${cliente.punitoriosPorcentaje}%): $${punitorios}`, 10, 180);
+            doc.text(`Total con Punitorios: $${totalConPunitorios}`, 10, 190);
+        }
+
+        // Estado de pago
+        doc.text(`Estado de Pago: ${cliente.pago}`, 10, 200);
+        doc.text(`Administrador: ${cliente.administrador}`, 10, 210);
+
+        // Línea divisoria
+        doc.text(`-----------------------------------------------------------`, 10, 220);
+
         // Mensaje de despedida
-        doc.text(`¡Gracias por su pago!`, 10, 170);
-        doc.text(`Si tiene alguna consulta, no dude en contactarnos.`, 10, 180);
+        doc.text(`¡Gracias por su pago!`, 10, 230);
+        doc.text(`Si tiene alguna consulta,\nno dude en contactarnos.`, 10, 240);
+
+        doc.text(`-----------------------------------------------------------`, 10, 250);
+
+        // Mensaje de reclamos resumido
+        doc.text(`Reclamos: enviar mail indicado en el contrato`, 10, 260);
 
         // Descargar el PDF
         doc.save(`ticket_pago_${cliente.nombre}_${cliente.apellido}.pdf`);
@@ -307,3 +336,4 @@ function descargarTicket(clienteId) {
         alert("Cliente no encontrado.");
     }
 }
+
